@@ -9,6 +9,7 @@ class Admin::AlbumsController < AdminController
 
   def show
     @album = Album.find(params[:id])
+    @articles = @album.articles
   end
 
   def new
@@ -17,6 +18,7 @@ class Admin::AlbumsController < AdminController
 
   def create
     @album = Album.new(album_params)
+    @album.user = current_user
 
     if @album.save
       redirect_to admin_albums_path
