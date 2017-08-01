@@ -31,9 +31,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# 基础gem
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
+
+# 上传图片
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 # Use Capistrano for deployment
@@ -45,6 +50,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'awesome_rails_console'
 end
 
 group :development do

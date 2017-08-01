@@ -5,4 +5,7 @@ class Album < ApplicationRecord
   belongs_to :user
   has_many :articles
 
+  # 图片上传支持----------
+  mount_uploader :album_cover, ImageUploader
+
 end
