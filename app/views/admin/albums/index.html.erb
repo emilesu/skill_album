@@ -1,1 +1,41 @@
-<h1>你好</h1>
+<div class="container">
+  <h2>所有专辑</h2>
+
+  <div class="group">
+    <%= link_to("新增专辑", new_admin_album_path, :class => "btn btn-primary pull-right") %>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>title</td>
+        <td>description</td>
+        <td>cover</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @albums.each do |album| %>
+        <tr>
+          <td>#</td>
+          <td><%= album.title %></td>
+          <td><%= album.description %></td>
+          <td>
+            <%= link_to album_path(album) do %>
+              <% if album.album_cover.present? %>
+                <%= image_tag(album.album_cover.thumb.url, :class => "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to("编辑", edit_admin_album_path(album), :class => "btn btn-sm btn-default") %>
+            <%= link_to("删除", admin_album_path(album), method: :delete, :class => "btn btn-sm btn-default", data: { confirm: "确定删除?" }) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
