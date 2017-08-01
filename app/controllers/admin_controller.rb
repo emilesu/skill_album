@@ -6,7 +6,7 @@ class AdminController < ApplicationController
 
   layout "admin"
 
-  protected
+  private
 
   # 管理员权限判断
   def require_admin!
