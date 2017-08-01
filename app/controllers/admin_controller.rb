@@ -8,6 +8,7 @@ class AdminController < ApplicationController
 
   protected
 
+  # 管理员权限判断
   def require_admin!
     if current_user.role != "admin"
       flash[:alert] = "您的权限不足"
