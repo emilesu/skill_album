@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>所有专辑</h2>
+
+  <div class="group">
+    <%= link_to("新增专辑", new_admin_album_path, :class => "btn btn-primary pull-right") %>
+  </div>
+
+  <% @albums.each do |album| %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <td>Cover</td>
+            <td>Title</td>
+            <td>Operation</td>
+            <td>Articles</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to admin_album_path(album) do %>
+                <% if album.album_cover.present? %>
+                  <%= image_tag(album.album_cover.mini.url, :class => "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/50x50&text=No Pic", class:"thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td><%= album.title %></td>
+            <td>
+              <%= link_to("编辑", edit_admin_album_path(album), :class => "btn btn-xs btn-default") %>
+              <%= link_to("删除", admin_album_path(album), method: :delete, :class => "btn btn-xs btn-default", data: { confirm: "确定删除?" }) %>
+              <%= link_to("新增文章", new_admin_album_article_path(album), :class => "btn btn-xs btn-default") %>
+            </td>
+            <td>
+              <% album.articles.each do |article| %>
+                <%= link_to(article.title, album_article_path(album, article)) %> </br>
+              <% end %>
+            </td>
+          </tr>
+      </table>
+  <% end %>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>编辑专辑</h2>
+
+  <%= render "form" %>
+
+  <!-- 当前封面 -->
+  <% if @album.album_cover.present? %>
+    <span>当前封面</span>
+    <%= image_tag(@album.album_cover.thumb.url) %>
+  <% end %>
+</div>
