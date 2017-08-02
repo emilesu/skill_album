@@ -40,6 +40,9 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# 编辑器
+gem 'ckeditor'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

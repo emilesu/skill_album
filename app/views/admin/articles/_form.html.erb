@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= f.input :title, :label => "文章标题" %>
     <%= f.input :label, :label => "文章标签" %>
-    <%= f.input :description, :label => "文章内容" %>
+    <%= f.input :description, as: :ckeditor, ckeditor: { language: "zh-CN" }, :label => "文章内容" %>
     <%= f.input :article_cover, as: :file, :label => "文章封面" %>
   </div>
   <%= f.submit "提交", :class => "btn btn-sm btn-default", :data => { disable_with: "Submiting..." } %>
