@@ -1,5 +1,5 @@
-class Admin::AlbumsController < AdminController
-  before_action :authenticate_user!, :only => [:new, :create, :update, :edit, :destroy]
+class Admin::ArticlesController < AdminController
+  before_action :only => [:new, :create, :update, :edit, :destroy]
 
 
   # CRUD----------
@@ -15,7 +15,7 @@ class Admin::AlbumsController < AdminController
     @article.user = current_user
 
     if @article.save
-      redirect_to admin_album(@album)
+      redirect_to admin_albums_path
     else
       render :new
     end
@@ -23,7 +23,6 @@ class Admin::AlbumsController < AdminController
 
 
   # private----------
-
   private
 
   def article_params

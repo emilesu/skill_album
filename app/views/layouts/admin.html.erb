@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SkillAlbum</title>
+    <title>简集|后台</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,15 +9,21 @@
   </head>
 
   <body>
-    <div class="row">
-      <%= render "common/navbar" %>
+    <div class="content">
+      <div class="row">
+        <div class="container-fluid">
+          <%= render "common/navbar" %>
+        </div>
+      </div>
+
       <div class="container-fluid">
         <%= yield %>
       </div>
 
-    </div>
 
-    <%= render "common/footer" %>
+
+      <%= render "common/footer" %>
+    </div>
 
   </body>
 </html>

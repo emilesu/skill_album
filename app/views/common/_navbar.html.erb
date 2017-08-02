@@ -15,7 +15,7 @@
 
     <div class="navbar-collapse navbar-ex1-collapse collapse navbar-right" aria-expanded="false">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to("浏览集册", admin_albums_path) %></li>
+        <li><%= link_to("浏览集册", albums_path) %></li>
         <% if !current_user %>
           <li><%= link_to("注册", new_user_registration_path, class: "navbar-font-size") %></li>
           <li><%= link_to("登入", new_user_session_path, class: "navbar-font-size") %></li>

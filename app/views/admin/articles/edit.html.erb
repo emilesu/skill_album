@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>编辑文章</h2>
+
+  <%= render "form" %>
+
+  <!-- 当前封面 -->
+  <% if @article.article_cover.present? %>
+    <span>当前封面</span>
+    <%= image_tag(@article.article_cover.thumb.url) %>
+  <% end %>
+</div>
