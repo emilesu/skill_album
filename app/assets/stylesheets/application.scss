@@ -15,3 +15,31 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+// 固定底部footer
+html {
+  height: 100%;
+  }
+
+body {
+  min-height: 100%;                                   // footer固定底部
+  display: flex;                                      // footer固定底部
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 300;
+  .content {
+    flex: 1;                                          // footer固定底部
+  }
+  .navbar {
+    border-radius: 0;                                 //圆角为0
+  }
+  .navbar-default {
+    background-color: #fff;
+    box-shadow: 0px 1.5px 4.85px 0.15px rgba(7, 0, 2, 0.08);
+    z-index: 4;
+  }
+  .navbar-font-size {
+    font-size: 12px;
+  }
+}
