@@ -10,7 +10,17 @@
   border-width: 0 0 0 1px;
 }
 
-.altum-banner {
+.great {
+  text-align: center;
+}
+
+.category—name {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+}
+
+.album-banner {
   width: 660px;
   height: 300px;
   background-position-x: 0px;
@@ -24,4 +34,54 @@
   vertical-align: middle;
   overflow: hidden;
   position: relative;
+}
+
+.album-box {
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.1);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  position: absolute;
+  width: 228px;
+  height: 267px;
+  z-index: 66;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align:center;
+  margin: 23px 15px;
+  transition: 0.1s;
+
+  p {
+    margin: 15px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #666;
+    margin: 0 8px;
+    line-height: 22px;
+  }
+
+  .album-covor {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    top: 110px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+  }
+}
+
+.album-box:hover {
+  background-color: #f8f8f8;
+  transition: 0.3s;
+  margin-top: -1%;
 }

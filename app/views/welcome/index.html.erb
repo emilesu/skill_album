@@ -2,19 +2,48 @@
   我们为什么要做一个全栈客？
 </h2>
 
-<ul class="container-fluid grid">
-  <div class="row">
-    <li class="altum-banner col-sm-6 col-xs-12" style="
-    background-image: url('<%= asset_path("bg1.jpg") %>') ;">
-    </li>
-    <li class="altum-banner col-sm-6 col-xs-12" style="
-    background-image: url('<%= asset_path("bg2.jpg") %>') ;">
-    </li>
-    <li class="altum-banner col-sm-6 col-xs-12" style="
-    background-image: url('<%= asset_path("bg3.jpg") %>') ;">
-    </li>
-    <li class="altum-banner col-sm-6 col-xs-12" style="
-    background-image: url('<%= asset_path("bg4.jpg") %>') ;">
-    </li>
+<main class="great">
+
+  <!-- 四个banner -->
+  <ul class="container-fluid grid">
+    <section class="row">
+      <li class="album-banner col-sm-6 col-xs-12" style="
+      background-image: url('<%= asset_path("bg1.jpg") %>') ;">
+      </li>
+      <li class="album-banner col-sm-6 col-xs-12" style="
+      background-image: url('<%= asset_path("bg2.jpg") %>') ;">
+      </li>
+      <li class="album-banner col-sm-6 col-xs-12" style="
+      background-image: url('<%= asset_path("bg3.jpg") %>') ;">
+      </li>
+      <li class="album-banner col-sm-6 col-xs-12" style="
+      background-image: url('<%= asset_path("bg4.jpg") %>') ;">
+      </li>
+    </section>
+  </ul>
+
+  <!-- 最新简集 -->
+
+  <div class="text-center"></br>
+    <h2 class="category—name">热门简集</h2>
+
+    <% @albums.each do |album| %>
+
+      <%= link_to album_path(album) do %>
+        <div class="album-box">
+          <p>「<%= album.meta %>」</p>
+          <h3><%= album.title %></h3>
+          <div class="album-covor" style="
+          background-image: url('<%= album.album_cover.thumb.url %>') ;">
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
+
   </div>
-</ul>
+
+
+
+
+</main>

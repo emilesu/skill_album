@@ -53,7 +53,7 @@ class Admin::AlbumsController < AdminController
   private
 
   def album_params
-    params.require(:album).permit(:title, :description, :album_cover)
+    params.require(:album).permit(:title, :description, :album_cover, :meta)
   end
 
 end
