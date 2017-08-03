@@ -1,6 +1,7 @@
 <%= simple_form_for [:admin, @album] do |f| %>
   <div class="form-group">
     <%= f.input :title, :label => "专辑名称" %>
+    <%= f.input :meta, :label => "专辑标签" %>
     <%= f.input :description, as: :ckeditor, ckeditor: { language: "zh-CN" }, :label => "专辑简介" %>
     <%= f.input :album_cover, as: :file, :label => "专辑封面" %>
   </div>
