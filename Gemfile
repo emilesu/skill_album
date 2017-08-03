@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 
 # 基础gem
 gem 'bootstrap-sass'
+gem "rails-i18n"
+gem "devise-i18n"
 gem 'devise'
 gem 'simple_form'
 
