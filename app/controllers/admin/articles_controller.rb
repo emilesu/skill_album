@@ -21,12 +21,36 @@ class Admin::ArticlesController < AdminController
     end
   end
 
+  def edit
+    @album = Album.find(params[:album_id])
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @album = Album.find(params[:album_id])
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to admin_albums_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @album = Album.find(params[:album_id])
+    @article = Article.find(params[:id])
+
+    @article.destroy
+    redirect_to admin_albums_path
+  end
+
 
   # private----------
   private
 
   def article_params
-    params.require(:article).permit(:title, :description, :article_cover, :label)
+    params.require(:article).permit(:title, :summary, :description, :label, :article_cover)
   end
 
 end
