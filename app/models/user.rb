@@ -8,5 +8,10 @@ class User < ApplicationRecord
    has_many :albums
    has_many :articles
 
+   #email用户名简写
+   def display_name
+     self.email.split("@").first
+   end
+
 
 end

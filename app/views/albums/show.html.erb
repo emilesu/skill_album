@@ -14,12 +14,15 @@
       </section>
 
       <!-- album集序 -->
-      <section class="album-info text-center col-md-10 col-md-offset-1 col-xs-12">
-        <h4>集序：</h4>
-        <p class="album-show-description"><%= @album.description %></p>
+      <section class="album-info col-md-10 col-md-offset-1 col-xs-12">
+        <h4 class="text-center">集序：</h4>
+
+        <div class="album-description row img-responsive center-block">
+          <%= sanitize @album.description %>
+        </div>
 
         <!-- album作者 -->
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-md-offset-4 text-center">
           <div class="album-user-avatar">
             <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "img-responsive img-circle center-block")%>
           </div>
@@ -29,20 +32,25 @@
             <p class="center-block">如果你去观察就会发现，如今的市场上已经见不到那些只讲地段、板塔这些简单粗暴的产品，当企业开始深挖客户需求和痛点，开始不仅仅提供最基本的居住功能，而是转向更多附加值；</p>
           </div>
           <hr>
+        </br>
         </div>
 
         <!-- album下的所有文章articles -->
         <div class="album-show-articles text-center col-xs-12">
           <% @album.articles.each do |article| %>
-            <section class="album-show-article-box">
-              <h3><%= article.title %></h3>
-              <section class="album-show-articles-summary">
-                <p><%= article.summary %></p>
+
+            <%= link_to album_article_path(@album, article) do%>
+              <section class="album-show-article-box">
+                <h3><%= article.title %></h3>
+                <section class="album-show-articles-summary">
+                  <p><%= sanitize article.summary %></p>
+                </section>
+                <div class="article-cover" style="
+                background-image: url('<%= article.article_cover.medium.url %>') ;">
+                </div>
               </section>
-              <div class="article-cover" style="
-              background-image: url('<%= article.article_cover.medium.url %>') ;">
-              </div>
-            </section>
+            <% end %>
+
           <% end %>
         </div>
 

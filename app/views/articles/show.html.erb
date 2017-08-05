@@ -1,3 +1,25 @@
-<%= @article.title %>
-<%= @article.label %>
-<%= sanitize @article.description %>
+<div class="container">
+  <section class="row">
+
+    <!-- article标题和meta -->
+    <section class="article-show-box col-md-10 col-md-offset-1 col-xs-12">
+      <h1><%= @article.title %></h1>
+      <p class="article-meta"><%= @article.user.display_name %> · <%= @article.label %> · <%= time_ago_in_words(@article.created_at) %>前 · 打开原文</p>
+
+      <div class="article-show-covor" style="
+      background-image: url('<%= @article.article_cover.url %>') ;">
+      </div>
+    </section>
+
+    <!-- article - description -->
+    <section class="article-info col-md-10 col-md-offset-1 col-xs-12">
+
+      <div class="article-description row img-responsive center-block">
+        <%= sanitize @article.description %>
+      </div>
+
+    </section>
+
+  </section>
+
+</div>
