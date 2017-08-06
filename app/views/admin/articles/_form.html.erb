@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= f.input :title, :label => "文章标题" %>
     <%= f.input :label, :label => "文章标签" %>
-    <%= f.input :summary, :labal => "摘要" %>
+    <%= f.input :summary, :label => "摘要" %>
     <%= f.cktext_area :description, as: :ckeditor, ckeditor: { toolbar: 'mini', language: "zh-CN" }, :label => "文章内容" %>
     <%= f.input :article_cover, as: :file, :label => "文章封面" %>
   </div>

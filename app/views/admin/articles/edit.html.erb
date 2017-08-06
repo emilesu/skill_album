@@ -5,7 +5,7 @@
 
   <!-- 当前封面 -->
   <% if @article.article_cover.present? %>
-    <span>当前封面</span>
+    <span>当前封面</span><br>
     <%= image_tag(@article.article_cover.thumb.url) %>
   <% end %>
 </div>
