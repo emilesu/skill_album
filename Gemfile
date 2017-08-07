@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -10,7 +10,7 @@ gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use sqlite3 as the database for Active Record
-
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -45,6 +45,8 @@ gem 'mini_magick'
 # 编辑器
 gem 'ckeditor'
 
+gem 'mysql2'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -53,10 +55,14 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'sqlite3'
+
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'awesome_rails_console'
+
+  # Capistrano部署工具
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 end
 
 group :development do
@@ -71,6 +77,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :production do
-  gem 'pg'
-end 
+# group :production do
+#   gem 'pg'
+# end
