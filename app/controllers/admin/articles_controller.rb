@@ -42,7 +42,6 @@ class Admin::ArticlesController < AdminController
     @article = Article.find(params[:id])
 
     @article.destroy
-    redirect_to admin_albums_path
   end
 
 
