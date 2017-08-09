@@ -4,12 +4,12 @@ class Admin::AlbumsController < AdminController
 
   # CRUD----------
   def index
-    @albums = Album.all
+    @albums = Album.order("id DESC").all
   end
 
   def show
     @album = Album.find(params[:id])
-    @articles = @album.articles
+    @articles = @album.order("id DESC").articles
   end
 
   def new

@@ -7,18 +7,22 @@
   <!-- 四个banner -->
   <ul class="container-fluid grid">
     <section class="row">
-      <li class="album-banner col-sm-6 col-xs-12" style="
-      background-image: url('<%= asset_path("bg1.jpg") %>') ;">
-      </li>
-      <li class="album-banner col-sm-6 col-xs-12" style="
-      background-image: url('<%= asset_path("bg2.jpg") %>') ;">
-      </li>
-      <li class="album-banner col-sm-6 col-xs-12" style="
-      background-image: url('<%= asset_path("bg3.jpg") %>') ;">
-      </li>
-      <li class="album-banner col-sm-6 col-xs-12" style="
-      background-image: url('<%= asset_path("bg4.jpg") %>') ;">
-      </li>
+      <% @albums.each do |album| %>
+        <li class="album-banner col-sm-6 col-xs-12" style="
+        background-image: url('<%= album.album_cover.url %>') ;">
+
+          <%= link_to album_path(album) do %>
+            <div class="banner-album-box">
+              <p>「<%= album.meta %>」</p>
+              <h3><%= album.title %></h3>
+              <div class="album-covor" style="
+              background-image: url('<%= album.album_cover.thumb.url %>') ;">
+              </div>
+            </div>
+          <% end %>
+        </li>
+
+      <% end %>
     </section>
   </ul>
 
