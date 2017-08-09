@@ -37,7 +37,7 @@
 
         <!-- album下的所有文章articles -->
         <div class="album-show-articles text-center col-xs-12">
-          <% @album.articles.each do |article| %>
+          <% @album.articles.order("created_at DESC").each do |article| %>
 
             <%= link_to album_article_path(@album, article) do%>
               <section class="album-show-article-box">
@@ -55,8 +55,37 @@
         </div>
 
 
+        <div class="container">
+          <br>
+        </div>
+        <!-- 输入表单 -->
+        <%= simple_form_for [@album, @review], :remote => true do |f| %>
+        <hr>
+          <div class="review-album-form">
+            <%= f.input :comment, :label => "评论一下：" %>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <%= f.submit "提交", class: "btn btn-sm btn-default", data: { disable_with: "正在提交..." } %>
+            </div>
+          </div>
+        <% end %>
+
+        <!-- 评论列表 -->
+        <div class="album-reviews">
+        </br>
+          <ul>
+            <% @album.reviews.order("created_at DESC").each do |review| %>
+              <%= render :partial => "reviews/review", :locals => { :review => review } %>
+            <% end %>
+          </ul>
+        </div>
 
       </section>
+
+
+
+
 
   </section>
 </div>

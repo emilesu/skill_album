@@ -7,6 +7,7 @@ class User < ApplicationRecord
    # model关系----------
    has_many :albums
    has_many :articles
+   has_many :reviews
 
    #email用户名简写
    def display_name

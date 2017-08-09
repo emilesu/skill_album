@@ -158,3 +158,40 @@
     -webkit-border-radius: 2px;
   }
 }
+
+// review评论表单
+.review-album-form {
+  label {
+    font-weight: 300;
+  }
+
+  margin-top: 30px;
+  textarea:focus {
+    box-shadow: none;
+    border-color: #ccc;
+  }
+}
+.album-reviews{
+  .album-review-user-avatar {
+    display: inline-block;
+  }
+
+  span {
+    vertical-align: super;        //垂直居中
+    margin-left: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    color: gray;
+  }
+
+  .album-review-comment {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    line-height: 24px;
+    text-align: justify;
+  }
+}

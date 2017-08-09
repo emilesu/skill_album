@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #前台专辑-文章路由----------
   resources :albums do
     resources :articles
+    resources :reviews
   end
 
   #后台路由----------

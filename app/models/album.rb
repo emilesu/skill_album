@@ -8,7 +8,8 @@ class Album < ApplicationRecord
 
   # model关系----------
   belongs_to :user
-  has_many :articles
+  has_many :articles, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
 
 
