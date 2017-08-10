@@ -22,7 +22,7 @@
         </div>
 
         <!-- album作者 -->
-        <div class="col-md-4 col-md-offset-4 text-center">
+        <!-- <div class="col-md-4 col-md-offset-4 text-center">
           <div class="album-user-avatar">
             <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "img-responsive img-circle center-block")%>
           </div>
@@ -33,7 +33,7 @@
           </div>
           <hr>
         </br>
-        </div>
+        </div> -->
 
         <!-- album下的所有文章articles -->
         <div class="album-show-articles text-center col-xs-12">
@@ -51,6 +51,22 @@
               </section>
             <% end %>
 
+          <% end %>
+        </div>
+
+
+        <!-- like点赞 -->
+        <div class="text-center">
+          <% if @album.liked_users.any? %>
+            <%= @album.liked_users.map{ |u| u.display_name }.join(",") %> 点了赞
+          <% end %>
+
+          <% if current_user %>
+            <% if @album.find_like(current_user) %>
+              <%= link_to "-1", unlike_album_path(@album), :method => :post, :clase => "btn btn-default", :class => "btn btn-default" %>
+            <% else %>
+              <%= link_to "+1", like_album_path(@album), :method => :post, :clase => "btn btn-default", :class => "btn btn-default" %>
+            <% end %>
           <% end %>
         </div>
 
