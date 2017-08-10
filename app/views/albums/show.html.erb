@@ -58,9 +58,9 @@
         <div class="container">
           <br>
         </div>
+        <hr>
         <!-- 输入表单 -->
         <%= simple_form_for [@album, @review], :remote => true do |f| %>
-        <hr>
           <div class="review-album-form">
             <%= f.input :comment, :label => "评论一下：" %>
           </div>
@@ -75,9 +75,11 @@
         <div class="album-reviews">
         </br>
           <ul>
-            <% @album.reviews.order("created_at DESC").each do |review| %>
-              <%= render :partial => "reviews/review", :locals => { :review => review } %>
-            <% end %>
+            <div id="album-review-list">
+              <% @album.reviews.order("created_at DESC").each do |review| %>
+                <%= render :partial => "reviews/review", :locals => { :review => review } %>
+              <% end %>
+            </div>
           </ul>
         </div>
 

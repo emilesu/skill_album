@@ -1,1 +1,6 @@
-$("#album-review-list").prepend("<%=j render :partial => "reviews/review", :locals => { :review => @review } %>");
+<% if @review.valid? %>
+  $("#album-review-list").prepend("<%=j render :partial => "reviews/review", :locals => { :review => @review } %>");
+  $("#review_comment").val("")
+<% else %>
+  alert("亲！评论不能为空哦！")
+<% end %>
