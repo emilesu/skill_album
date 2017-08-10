@@ -15,8 +15,6 @@ class AlbumsController < ApplicationController
     unless @album.find_like(current_user)
       Like.create( :user => current_user, :album => @album )
     end
-
-    redirect_to album_path(@album)
   end
 
   def unlike
@@ -24,7 +22,7 @@ class AlbumsController < ApplicationController
     like = @album.find_like(current_user)
     like.destroy
 
-    redirect_to album_path(@album)
+    render "like"
   end
 
 end

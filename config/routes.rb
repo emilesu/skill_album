@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #前台专辑-文章路由----------
   resources :albums do
     member do
-      post :like
+      post :like 
       post :unlike
     end
     resources :articles

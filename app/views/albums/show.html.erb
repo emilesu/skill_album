@@ -57,17 +57,9 @@
 
         <!-- like点赞 -->
         <div class="text-center">
-          <% if @album.liked_users.any? %>
-            <%= @album.liked_users.map{ |u| u.display_name }.join(",") %> 点了赞
-          <% end %>
-
-          <% if current_user %>
-            <% if @album.find_like(current_user) %>
-              <%= link_to "-1", unlike_album_path(@album), :method => :post, :clase => "btn btn-default", :class => "btn btn-default" %>
-            <% else %>
-              <%= link_to "+1", like_album_path(@album), :method => :post, :clase => "btn btn-default", :class => "btn btn-default" %>
-            <% end %>
-          <% end %>
+          <span id="album-like-<%= @album.id %>">
+            <%= render :partial => "like", :local => { :album => @album } %>
+          </span>
         </div>
 
 
@@ -100,10 +92,6 @@
         </div>
 
       </section>
-
-
-
-
 
   </section>
 </div>

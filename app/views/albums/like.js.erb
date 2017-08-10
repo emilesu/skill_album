@@ -1,0 +1,2 @@
+str = "<%= j render :partial => "like", :locals => { :album => @album } %>";
+$("#album-like-<%= @album.id %>").html(str);
