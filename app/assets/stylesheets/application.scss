@@ -16,6 +16,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+  // box-sizing: border-box;  避免浮动的尺寸挤压
+}
 
 // 固定底部footer
 html {

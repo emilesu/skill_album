@@ -43,8 +43,11 @@ gem 'mini_magick'
 # 编辑器
 gem 'ckeditor'
 
+# 部署时mysql服务器支持
 gem 'mysql2'
 
+# 微信登陆
+gem "omniauth-wechat-oauth2"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
