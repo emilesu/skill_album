@@ -4,7 +4,18 @@
     <!-- article标题和meta -->
     <section class="article-show-box col-md-10 col-md-offset-1 col-xs-12">
       <h1><%= @article.title %></h1>
-      <p class="article-meta"><%= @article.user.display_name %> · <%= @article.label %> · <%= time_ago_in_words(@article.created_at) %>前 · 打开原文</p>
+
+      <div class="row">
+        <div class="col-xs-9">
+          <p class="article-meta"><%= @article.user.display_name %> · <%= @article.label %> · <%= time_ago_in_words(@article.created_at) %>前 · 打开原文 </p>
+        </div>
+
+        <!-- 社群分享 -->
+        <div class=" col-xs-3 text-right">
+          <%= social_share_button_tag(@article.title, :allow_sites => %w(wechat weibo douban), :image => @article.article_cover.url , desc: @article.description) %>
+        </div>
+      </div>
+
 
       <div class="article-show-covor" style="
       background-image: url('<%= @article.article_cover.url %>') ;">

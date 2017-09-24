@@ -49,6 +49,9 @@ gem 'mysql2'
 # 微信登陆
 gem "omniauth-wechat-oauth2"
 
+# 社群分享
+gem "social-share-button"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
